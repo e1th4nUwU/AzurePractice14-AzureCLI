@@ -24,6 +24,7 @@ Press the **Windows** key and type *cmd*, then click on *Command prompt*.
 ![CMDSearch](img/windows-cmd.png)
 #####    Mac
 Press **Command + Spacebar** and type *terminal*, then click on it.
+
 ![TerminalSearch](img/mac-terminal.png)
 ####    Linux
 This will depend a lot on the distribution you're using, however, for most desktop distributions the shortcut to open a command line is **Ctrl + Alt + T**.
