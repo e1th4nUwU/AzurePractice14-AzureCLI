@@ -1,4 +1,5 @@
 # Getting started with Azure CLI
+
 ![CLIArt](img/cli-art.png)
 
 
@@ -21,11 +22,14 @@
 
 #####    Windows
 Press the **Windows** key and type *cmd*, then click on *Command prompt*.
+
 ![CMDSearch](img/windows-cmd.png)
+
 #####    Mac
 Press **Command + Spacebar** and type *terminal*, then click on it.
 
 ![TerminalSearch](img/mac-terminal.png)
+
 ####    Linux
 This will depend a lot on the distribution you're using, however, for most desktop distributions the shortcut to open a command line is **Ctrl + Alt + T**.
 
@@ -36,7 +40,9 @@ az login
 ```
 
 #### 3. A new browser window will appear, just login to your Microsoft Azure account. If your logged in succesfully, the following message will appear:
+
 ![LoginSuccesful](img/az-login-success.png)
+
 #### 4. We will now create a new resource group. Type the following command in order to do so:
 
 ```Bash
@@ -48,11 +54,14 @@ az group create --location uksouth --name cli-resource-group
 ```Bash
 az group list
 ```
+
 ![ResourceGroupCLIList](img/cli-resource-groups-list.png)
 
 #### 6. We can also see our resource groups using the [Azure Portal](https://portal.azure.com/#home). Once you're inside your dashboard, click on the searchbar and type *Resource groups*, then click on it.
+
 ![Searchbar](img/searchbar.png)
 #### 7. You will now see all of your resource groups, including the one you just created using Azure CLI.
+
 ![ResourceGroupPortalList](img/portal-resource-groups-list.png)
 #### 8. We will now create a VM inside the resource group. Go back to your terminal and insert the following command:
 
@@ -68,6 +77,7 @@ az resource list --resource-group cli-resource-group
 ```
 
 #### Alternatively, you can check it inside the Azure Portal by clicking on your resource group:
+
 ![AzurePortalResources](img/portal-resource-groups-list.png)
 
 
@@ -77,34 +87,46 @@ az resource list --resource-group cli-resource-group
 ```Bash
 az vm list-ip-addresses --resource-group cli-resource-group
 ```
+
 ![VMIPs](img/vm-ip-details.png)
+
 #### 2. Identify your VM's public IP address.
+
 ![PublicAddress](img/public-ip.png)
+
 #### 3. Insert the following command, but replace *IPADDRESS* with your VM's public IP.
 ```Bash
 ssh azureuser@IPADDRESS
 ```
+
 ![SSH](img/ssh.png)
+
 #### 4. Congratulations! You are now connected to your VM!
+
 ![ConnectedToVM](img/connected-to-vm.png)
+
 #### 5. In order to exit from your VM and go back to your regular terminal, just type *exit*.
 ```Bash
 exit
 ```
-![Exit](img/exit.png)
 
+![Exit](img/exit.png)
 
 ## Deleting your resources
 #### 1. Once we remove your resource group, the VM inside it will also be deleted. Insert the following command to remove your resource group, then, press *y* and enter (this may take some time).
 ```Bash
 az group delete -n cli-resource-group
 ```
+
 ![Delete](img/delete.png)
+
 #### 2. Let's list our resource groups again to check that it isn't there.
 ```Bash
 az group list
 ```
+
 ![DeletedResourceGroup](img/deleted-resource-group.png)
+
 #### 3. As you can see, our resource group (*cli-resource-group*) has been deleted, however, we do have another resource group called *NetworkWatcherRG*; this resource group was created when we created our VM. I don't need it for any of my resources, so I'll be removing it as well. 
 ```Bash
 az group delete -n NetworkWatcherRG
